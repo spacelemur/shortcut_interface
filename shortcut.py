@@ -48,6 +48,7 @@ class ShortcutInterface:
           self.gui.create_frame(group_name)
           dirpath = sc_def['path']
           files = os.listdir(dirpath)
+          #FIXME: displays entire file path in combo box. going to have to associate name with filepath and look up
           file_paths = [os.path.abspath(os.path.join(dirpath,file)) for file in files]
           self.gui.define_sc_select_widget(self.gui.frames[group_name], file_paths)
         
