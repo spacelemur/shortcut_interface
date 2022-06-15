@@ -1,11 +1,5 @@
-dirs:
-  name: dirs
-  type: file
-  pathtype: relative
-  path: dirs.yml
+shortcuts:
+  path: shortcuts.yml
+  type: yml
+  
 
-workspaces:
-  name: workspaces
-  type: dir
-  pathtype: absolute
-  path: tbd

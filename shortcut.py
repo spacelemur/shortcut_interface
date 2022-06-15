@@ -6,16 +6,27 @@ import yaml
 shortcut_dir_path = os.path.dirname(os.path.realpath(__file__))
 
 class ShortcutInterface:
-  def __init__(self):
-    self.config = None
+  def __init__(self, use_gui = True):
+    self.use_gui = use_gui
+    self.gui = None
+    self.shortcut_config = None
+    self.shortcuts_path = None
     
 
   def load_config(self, config_path = 'config.yml'):
+    # Load tool configuration
     with open(config_path, 'r') as config_file:
       self.config = yaml.safe_load(config_file)
-      print(f"\n{self.config}")
-      print(self.config['dirs']['type'])
 
+    # Load shortcuts
+    self.shortcuts_path = self.config['shortcuts']['path']
+    with open(self.shortcuts_path, 'r') as shortcut_config_file:
+      self.shortcut_config = yaml.safe_load(shortcut_config_file)
+      print(f"\n{self.shortcut_config}")
+
+  def create_gui(self):
+    self.gui = ShortcutGui(self.shortcut_config)
+    self.gui.display_window()
 
 class ShortcutGui:
   def __init__(self, sci_array):
@@ -28,14 +39,14 @@ class ShortcutGui:
       frame = tk.Frame(self.root)
       item = self.sci_array[i]
       if item['type'] == 'file':
+        print(f'adding button for {item["name"]}')
         new_button = self.define_button(frame, item['name'], item['path']) #TODO: fix this to based on absolute/relative
-        frame.append(new_button)
         new_button.pack()
       frame.pack()
     self.root.mainloop()
 
   def define_button(self, parent, buttonlabel, path):
-    b = tk.Button(parent, text= buttonlabel, command=lambda p=path : os.os.startfile(p))
+    b = tk.Button(parent, text= buttonlabel, command=lambda p=path : os.startfile(p))
     return b
 
 
@@ -44,5 +55,4 @@ class ShortcutGui:
 if __name__=='__main__':
   sci = ShortcutInterface()
   sci.load_config()
-  gui = ShortcutGui(sci.config)
-  gui.display_window()
+  sci.create_gui()

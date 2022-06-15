@@ -1,0 +1,11 @@
+shortcuts:
+  name: shortcuts
+  type: file
+  pathtype: relative
+  path: shortcuts.yml
+
+workspaces:
+  name: workspaces
+  type: dir
+  pathtype: absolute
+  path: tbd
