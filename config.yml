@@ -1,9 +1,11 @@
 dirs:
+  name: dirs
   type: file
   pathtype: relative
   path: dirs.yml
 
 workspaces:
+  name: workspaces
   type: dir
   pathtype: absolute
   path: tbd
