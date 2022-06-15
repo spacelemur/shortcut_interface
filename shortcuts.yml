@@ -4,8 +4,15 @@ shortcuts:
   pathtype: relative
   path: shortcuts.yml
 
+config:
+  name: config
+  type: file
+  pathtype: relative
+  path: config.yml
+
 workspaces:
   name: workspaces
   type: dir
-  pathtype: absolute
-  path: tbd
+  pathtype: relative
+  path: win_shortcuts
+
