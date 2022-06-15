@@ -1,5 +1,5 @@
 shortcuts:
   path: shortcuts.yml
   type: yml
-  
 
+debug: True
