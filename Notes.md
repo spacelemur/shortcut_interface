@@ -9,6 +9,7 @@
     - Note: this works, but this perhaps isn't the best way- passing GUI all the way down to the method. 
   [x] Implement something similar to the src/group_link_folder method of destroying main gui window to close
   [ ] For some reason Aliases don't work on MacOS - they open in Terminal.. Otherwise this works
+  [ ] for link folders: some sort of parsing maybe so only list the links in em?
 
 
   ## Link Folders:

@@ -1,5 +1,5 @@
 shortcuts_config:
-  path: shortcut_config.yml
+  path: config/shortcuts.yml
 
 gui: True # TODO: Implement this as an option
 debug: True

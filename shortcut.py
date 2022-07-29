@@ -18,7 +18,7 @@ class ShortcutInterface:
     self.gui = None
     self.max_columns = 100
 
-  def load_config(self, config_path = 'config.yml'):
+  def load_config(self, config_path = 'config/config.yml'):
     # Load tool configuration
     with open(config_path, 'r') as config_file:
       self.config = yaml.safe_load(config_file)

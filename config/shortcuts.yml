@@ -2,7 +2,7 @@ direct_link:
   group_name: Direct Link
   type: link
   path_type: relative
-  path: config.yml
+  path: config/config.yml
   gui_type: button
   description: "This type of shortcut is just a direct link to something the user wants opened"
   link_name: 'Config YML file' # Have to name it something for gui
@@ -19,7 +19,7 @@ linklist:
   group_name: Link list
   type: link_list
   path_type: relative
-  path: linklist.yml
+  path: config/linklist.yml
   gui_type: button
   description: "This type of shortcut is a link to a .yml file filled with links. The syntax for the links should be:
                 link name: path"
