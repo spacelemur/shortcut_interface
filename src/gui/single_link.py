@@ -1,7 +1,7 @@
 import tkinter as tk
 from src.open_shortcut import open_shortcut
 
-class GroupLink:
+class SingleLink:
   def __init__(self, gui, linkgroup) -> None:
     self.frame = tk.LabelFrame(gui.root, text=linkgroup.name)
 

@@ -1,4 +1,4 @@
-from .group_link_folder import GroupLinkFolder
-from .group_link import GroupLink
+from .link_group import LinkGroup
+from .single_link import SingleLink
 from .group_link_list import GroupLinkList
 from .main_window import MainWindow

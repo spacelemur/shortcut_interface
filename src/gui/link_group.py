@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from src.open_shortcut import open_shortcut
 
-class GroupLinkFolder:
+class LinkGroup:
   def __init__(self, gui, link_group) -> None:
     self.frame = tk.LabelFrame(gui.root, text=link_group.name)
 
@@ -11,8 +11,8 @@ class GroupLinkFolder:
       # print(link_group.links.items())
       for link_name, link_path in link_group.links.items():
         # print(link_path)
-        b = tk.Button(self.frame, text= link_name, command=lambda p=link_path : open_shortcut(p))
-        b.pack(side='left')
+        b = tk.Button(self.frame, text= link_name, command=lambda p=link_path : open_shortcut(p, gui))
+        b.pack(side='top')
 
     elif link_group.gui_type == 'combobox':
       # print(link_group.links.keys())
