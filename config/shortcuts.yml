@@ -7,7 +7,7 @@ direct_link:
   description: "This type of shortcut is just a direct link to something the user wants opened"
   link_name: 'Config YML file' # Have to name it something for gui
 
-link_folder:          # Configuration group
+link_folder:          # Configuration group name
   group_name: Link folder   # Title of group
   type: link_folder   # Type of group
   path_type: relative  # Path type
