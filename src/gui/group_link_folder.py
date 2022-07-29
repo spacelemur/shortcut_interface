@@ -3,8 +3,8 @@ from tkinter import ttk
 from src.open_shortcut import open_shortcut
 
 class GroupLinkFolder:
-  def __init__(self, parent, link_group) -> None:
-    self.frame = tk.LabelFrame(parent, text=link_group.name)
+  def __init__(self, gui, link_group) -> None:
+    self.frame = tk.LabelFrame(gui.root, text=link_group.name)
 
     # Set up gui interface
     if link_group.gui_type == 'button':
@@ -18,7 +18,7 @@ class GroupLinkFolder:
       print(link_group.links.keys())
       cb = ttk.Combobox(self.frame, values=list(link_group.links.keys()))
       cb.pack()
-      b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()])) 
+      b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()], gui.root)) 
       b.pack(side = 'left')
 
     else:

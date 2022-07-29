@@ -6,7 +6,9 @@
 
 # TODO list:
     [ ] Figure out a way to close gui after following the shortcut
+    [ ] Implement something similar to the src/group_link_folder method of destroying main gui window to close
     [ ] For some reason Aliases don't work on MacOS - they open in Terminal.. Otherwise this works
+
 
   ## Link Folders:
     [x] the group_link_folder combobox option doesn't work

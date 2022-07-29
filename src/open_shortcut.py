@@ -1,7 +1,12 @@
 import os
 import platform
 
-def open_shortcut(shortcut_path):
+def open_shortcut(shortcut_path, root_window):
+  try:
+    root_window.destroy()
+  except:
+    pass
+
   operating_system = platform.platform()
   if 'macOS' in operating_system:
     os.system(f"open '{shortcut_path}'")

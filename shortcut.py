@@ -51,7 +51,7 @@ class ShortcutInterface:
         group_frame = gui.GroupLink(self.gui.root, link_group)
       elif link_group.type == 'link_folder':
         print('adding a link GroupLinkFolder') if self.debug else False
-        group_frame = gui.GroupLinkFolder(self.gui.root, link_group)
+        group_frame = gui.GroupLinkFolder(self.gui, link_group)
       elif link_group.type == 'link_list':
         print('adding a link GroupLinkList') if self.debug else False
         group_frame = gui.GroupLinkList(self.gui.root, link_group)
