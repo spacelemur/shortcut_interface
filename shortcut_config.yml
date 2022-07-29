@@ -1,0 +1,27 @@
+direct_link:
+  group_name: Direct Link
+  type: link
+  path_type: relative
+  path: config.yml
+  gui_type: button
+  description: "This type of shortcut is just a direct link to something the user wants opened"
+  link_name: 'Config YML file'
+
+link_folder:          # Configuration group
+  group_name: Link folder   # Title of group
+  type: link_folder   # Type of group
+  path_type: relative  # Path type
+  path: mac_shortcuts # Path to the thing
+  gui_type: combobox
+  description: "This type of shortcut is just a folder containing a bunch of OS shortcut objects which can be opened"
+
+linklist:
+  group_name: Link list
+  type: link_list
+  path_type: relative
+  path: linklist.yml
+  gui_type: button
+  description: "This type of shortcut is a link to a .yml file filled with links. The syntax for the links should be:
+                link name: path"
+
+
