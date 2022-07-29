@@ -41,7 +41,7 @@ class ShortcutInterface:
 
   def create_gui(self):
     print("\n\nCreate Gui:") if self.debug else False
-    self.gui = gui.MainWindow(self, self.shortcut_config)
+    self.gui = gui.MainWindow(self)
     for link_group in self.link_groups:
       print(link_group.type) if self.debug else False
       group_frame = gui.LinkGroupFrame(self.gui, link_group)

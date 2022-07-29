@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import FIRST, ttk
 from src.open_shortcut import open_shortcut
 
 class LinkGroupFrame:
@@ -21,6 +21,15 @@ class LinkGroupFrame:
       cb.set(list(link_group.links.keys())[0])
       cb.pack(side='top')
       b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()], gui)) 
+      b.pack(side='top')
+
+    elif link_group.gui_type == 'listbox':
+      selection_list = list(link_group.links.keys())
+      selection_list_stringvar = tk.StringVar(value=selection_list)
+      lb = tk.Listbox(self.frame, listvariable=selection_list_stringvar, selectmode='browse')
+      lb.selection_set(0)
+      lb.pack(side='top')
+      b = tk.Button(self.frame, text='Go', command=lambda l_box=lb : open_shortcut(link_group.links[lb.get(lb.curselection())], gui)) 
       b.pack(side='top')
 
     else:
