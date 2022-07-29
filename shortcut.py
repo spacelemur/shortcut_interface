@@ -58,7 +58,7 @@ class ShortcutInterface:
       else:
         raise f"Gui Link group error. Gui type is {link_group.gui_type}"
       f = group_frame.return_frame()
-      f.pack(side='left')
+      f.pack(side='left', fill='both')
       
     self.gui.display_gui()
 

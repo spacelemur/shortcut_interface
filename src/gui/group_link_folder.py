@@ -16,10 +16,12 @@ class GroupLinkFolder:
 
     elif link_group.gui_type == 'combobox':
       # print(link_group.links.keys())
+
       cb = ttk.Combobox(self.frame, values=list(link_group.links.keys()))
-      cb.pack()
+      cb.set(list(link_group.links.keys())[0])
+      cb.pack(side='top')
       b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()], gui)) 
-      b.pack(side='left')
+      b.pack(side='top')
 
     else:
       raise f"At the moment gui type {link_group.gui} is not implemented"
