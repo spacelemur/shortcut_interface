@@ -3,3 +3,4 @@ shortcuts_config:
 
 gui: True # TODO: Implement this as an option
 debug: True
+grid_columns: 3

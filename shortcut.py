@@ -16,6 +16,7 @@ class ShortcutInterface:
     self.shortcut_config = None
     self.link_groups = []
     self.gui = None
+    self.max_columns = 100
 
   def load_config(self, config_path = 'config.yml'):
     # Load tool configuration
@@ -39,9 +40,12 @@ class ShortcutInterface:
     for parameters in config.values():
       self.link_groups += [LinkGroup(parameters)]
 
+    self.max_columns = self.config['grid_columns'] #TODO: to be implemented later
+
   def create_gui(self):
     print("\n\nCreate Gui:") if self.debug else False
     self.gui = gui.MainWindow(self)
+    column = 0
     for link_group in self.link_groups:
       print(link_group.type) if self.debug else False
       group_frame = gui.LinkGroupFrame(self.gui, link_group)
@@ -58,13 +62,6 @@ class ShortcutInterface:
       except:
         pass
     exit
-
-  def open_shortcut(self, shortcut_path): #FIXME:Depreciated 
-    os.startfile(shortcut_path) #TODO: fix this to based on absolute/relative path inputs
-    print(self.use_gui)
-    if self.use_gui:
-      print('true condition satisfied') if self.debug  else False
-      self.finish()
 
 if __name__=='__main__':
   sci = ShortcutInterface()
