@@ -2,7 +2,7 @@ import os
 import yaml
 class LinkGroup:
   def __init__(self, dict):
-    print('Creating a LinkGroup!')
+    #print('Creating a LinkGroup!')
     self.dict = dict
     self.name = dict['group_name']
     self.type = dict['type']
