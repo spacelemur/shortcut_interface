@@ -12,7 +12,7 @@ link_folder:          # Configuration group
   type: link_folder   # Type of group
   path_type: relative  # Path type
   path: mac_shortcuts # Path to the thing
-  gui_type: combobox
+  gui_type: combobox  # Button or Combobox
   description: "This type of shortcut is just a folder containing a bunch of OS shortcut objects which can be opened"
 
 linklist:

@@ -1,6 +1,6 @@
 import os
 import yaml
-from src.linkgroup import LinkGroup
+from src.link_group import LinkGroup
 from src import gui
 import pprint
 
@@ -58,7 +58,7 @@ class ShortcutInterface:
       else:
         raise f"Gui Link group error. Gui type is {link_group.gui_type}"
       f = group_frame.return_frame()
-      f.pack()
+      f.pack(side='left')
       
     self.gui.display_gui()
       
