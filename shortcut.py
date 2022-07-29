@@ -45,13 +45,13 @@ class ShortcutInterface:
     for link_group in self.link_groups:
       print(link_group.type) if self.debug else False
       if link_group.type == 'link':
-        print('adding a link GroupLink') if self.debug else False
-        group_frame = gui.SingleLinkFrame(self.gui, link_group)
+        print('adding a link SingleLinkFrame') if self.debug else False
+        group_frame = gui.LinkGroupFrame(self.gui, link_group)
       elif link_group.type == 'link_folder':
-        print('adding a link GroupLinkFolder') if self.debug else False
+        print('adding a link LinkGroupFrame from folder') if self.debug else False
         group_frame = gui.LinkGroupFrame(self.gui, link_group)
       elif link_group.type == 'link_list':
-        print('adding a link GroupLinkList') if self.debug else False
+        print('adding a link LinkGroupFrame from list') if self.debug else False
         group_frame = gui.LinkGroupFrame(self.gui, link_group)
       else:
         raise f"Gui Link group error. Gui type is {link_group.gui_type}"
