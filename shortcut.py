@@ -44,17 +44,7 @@ class ShortcutInterface:
     self.gui = gui.MainWindow(self, self.shortcut_config)
     for link_group in self.link_groups:
       print(link_group.type) if self.debug else False
-      if link_group.type == 'link':
-        print('adding a link SingleLinkFrame') if self.debug else False
-        group_frame = gui.LinkGroupFrame(self.gui, link_group)
-      elif link_group.type == 'link_folder':
-        print('adding a link LinkGroupFrame from folder') if self.debug else False
-        group_frame = gui.LinkGroupFrame(self.gui, link_group)
-      elif link_group.type == 'link_list':
-        print('adding a link LinkGroupFrame from list') if self.debug else False
-        group_frame = gui.LinkGroupFrame(self.gui, link_group)
-      else:
-        raise f"Gui Link group error. Gui type is {link_group.gui_type}"
+      group_frame = gui.LinkGroupFrame(self.gui, link_group)
       f = group_frame.return_frame()
       f.pack(side='left', fill='both')
       
