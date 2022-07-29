@@ -45,46 +45,22 @@ class ShortcutInterface:
     print("\n\nCreate Gui:") if self.debug else False
     self.gui = gui.MainWindow(self, self.shortcut_config)
     for link_group in self.link_groups:
-      print(link_group.type) if self.debug else false
+      print(link_group.type) if self.debug else False
       if link_group.type == 'link':
         print('adding a link GroupLink') if self.debug else False
-        group_frame = gui.GroupLink(self.gui.root, link_group)
+        group_frame = gui.GroupLink(self.gui, link_group)
       elif link_group.type == 'link_folder':
         print('adding a link GroupLinkFolder') if self.debug else False
         group_frame = gui.GroupLinkFolder(self.gui, link_group)
       elif link_group.type == 'link_list':
         print('adding a link GroupLinkList') if self.debug else False
-        group_frame = gui.GroupLinkList(self.gui.root, link_group)
+        group_frame = gui.GroupLinkList(self.gui, link_group)
       else:
         raise f"Gui Link group error. Gui type is {link_group.gui_type}"
       f = group_frame.return_frame()
       f.pack(side='left')
       
     self.gui.display_gui()
-      
-
-  # def create_gui2(self):
-  #   self.gui = MainWindow(self, self.shortcut_config)
-  #   for sc_name, sc_def in self.shortcut_config.items():
-  #     print(sc_name) if self.debug else False
-  #     if sc_def['type'] == 'file':
-  #       if 'Files' not in self.gui.frames:
-  #         self.gui.create_frame('Files')
-  #       #TODO: create a better method for accessing frames- gui method to return frame?
-  #       self.gui.define_sc_button(self.gui.frames['Files'], sc_def['name'], sc_def['path'])
-  #     elif sc_def['type'] == 'dir':
-  #       group_name = sc_def['name']
-  #       if group_name not in self.gui.frames:
-  #         self.gui.create_frame(group_name)
-  #         dirpath = sc_def['path']
-  #         files = os.listdir(dirpath)
-  #         #FIXME: displays entire file path in combo box. going to have to associate name with filepath and look up
-  #         file_paths = [os.path.abspath(os.path.join(dirpath,file)) for file in files]
-          # self.gui.define_sc_select_widget(self.gui.frames[group_name], file_paths)
-        
-      
-
-    # self.gui.display_gui2()
 
   def finish(self):
     if self.gui.active:
@@ -95,7 +71,7 @@ class ShortcutInterface:
         pass
     exit
 
-  def open_shortcut(self, shortcut_path):
+  def open_shortcut(self, shortcut_path): #FIXME:Depreciated 
     os.startfile(shortcut_path) #TODO: fix this to based on absolute/relative path inputs
     print(self.use_gui)
     if self.use_gui:

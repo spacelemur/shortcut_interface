@@ -12,14 +12,14 @@ class GroupLinkFolder:
       for link_name, link_path in link_group.links.items():
         # print(link_path)
         b = tk.Button(self.frame, text= link_name, command=lambda p=link_path : open_shortcut(p))
-        b.pack(side = 'left')
+        b.pack(side='left')
 
     elif link_group.gui_type == 'combobox':
-      print(link_group.links.keys())
+      # print(link_group.links.keys())
       cb = ttk.Combobox(self.frame, values=list(link_group.links.keys()))
       cb.pack()
-      b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()], gui.root)) 
-      b.pack(side = 'left')
+      b = tk.Button(self.frame, text='Go', command=lambda c_box=cb : open_shortcut(link_group.links[c_box.get()], gui)) 
+      b.pack(side='left')
 
     else:
       raise f"At the moment gui type {link_group.gui} is not implemented"

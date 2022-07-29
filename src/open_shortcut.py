@@ -1,9 +1,9 @@
 import os
 import platform
 
-def open_shortcut(shortcut_path, root_window):
+def open_shortcut(shortcut_path, gui):
   try:
-    root_window.destroy()
+    gui.close_gui()
   except:
     pass
 

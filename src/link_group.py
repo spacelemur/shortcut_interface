@@ -12,6 +12,7 @@ class LinkGroup:
     self.description = dict['description']
     self.links = {}
 
+  #TODO: Maybe put this functionality in Controller?
   # def load_links(self):
     if self.type == 'link':
       self.links[self.dict['link_name']] = self.path

@@ -5,26 +5,12 @@ class MainWindow:
   def __init__(self, parent, sci_array):
     self.root = tk.Tk()
     self.frames = {}
-
     self.sci_array = sci_array
     self.active = False
     self.sci_obj = parent
 
   def display_gui(self):
-    # interfaces = self.sci_array.keys()
-    # for i in interfaces:
-    #   frame = tk.Frame(self.root)
-    #   item = self.sci_array[i]
-    #   if item['type'] == 'file':
-    #     print(f'adding button for {item["name"]}') if self.sci_obj.debug else False
-    #     new_button = self.define_sc_button(frame, item['name'], item['path']) 
-    #     new_button.pack()
-    #   frame.pack()
-    # self.active = True
     self.root.mainloop()
-
-  def add_link_group(link_group_frame):
-    print('TODO:')
 
   def create_frame(self, fname): #FIXME: Depreciated
     f = tk.LabelFrame(self.root, text = fname)
