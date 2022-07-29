@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from src.open_shortcut import open_shortcut
 
-class LinkGroup:
+class LinkGroupFrame:
   def __init__(self, gui, link_group) -> None:
     self.frame = tk.LabelFrame(gui.root, text=link_group.name)
 

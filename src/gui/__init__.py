@@ -1,4 +1,3 @@
-from .link_group import LinkGroup
-from .single_link import SingleLink
-from .group_link_list import GroupLinkList
+from .link_group_frame import LinkGroupFrame
+from .single_link_frame import SingleLinkFrame
 from .main_window import MainWindow
