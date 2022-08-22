@@ -6,6 +6,7 @@ import pprint
 
 # Find file path and setup configuration
 shortcut_dir_path = os.path.dirname(os.path.realpath(__file__)) #FIXME: Delete if not needed
+os.chdir(shortcut_dir_path)
 
 class ShortcutInterface:
   def __init__(self, use_gui = True):
