@@ -11,6 +11,7 @@ class MainWindow:
     self.root.title(window_name)
 
   def display_gui(self):
+    self.root.attributes('-topmost', 1)
     self.root.mainloop()
 
 
